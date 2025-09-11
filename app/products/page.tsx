@@ -105,17 +105,13 @@ export default function ProductsPage() {
                     </CardDescription>
                   </CardHeader>
                <CardContent>
-  <Button
-    asChild
-    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-  >
-    <a href={product?.product_link} target="_blank" rel="noopener noreferrer">
-     <span className="flex items-center justify-center gap-2">
-      Learn More
-      <ExternalLink className="ml-2 h-4 w-4" />
-    </a>
-    </span>
+ <a href={product?.product_link} target="_blank" rel="noopener noreferrer">
+  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground flex items-center justify-center gap-2">
+    Learn More
+    <ExternalLink className="h-4 w-4" />
   </Button>
+</a>
+
 </CardContent>
 
                 </Card>
