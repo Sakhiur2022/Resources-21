@@ -78,7 +78,7 @@ export default function ProductsPage() {
               {products.map((product) => (
                 <Card key={product.id} className="bg-card border-border hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center mb-4">
+                    <div className="w-full h-48 sm:h-56 md:h-64 lg:h-48 object-cover rounded-lg mb-4">
                       {product.image_url ? (
                         <img
                           src={product.image_url || "/placeholder.svg"}
@@ -101,21 +101,19 @@ export default function ProductsPage() {
                       </div>
                     </div>
                     <CardDescription className="text-pretty">
-                      High-quality {product.category.toLowerCase()} from {product.brand}
+                      High-quality {product?.category.toLowerCase()} from {product.brand}
                     </CardDescription>
                   </CardHeader>
-               <CardContent>
-  <Button
-    asChild
-    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-  >
-    <a href={product?.product_link} target="_blank" rel="noopener noreferrer">
-      Learn More
-      <ExternalLink className="ml-2 h-4 w-4" />
-    </a>
-  </Button>
-</CardContent>
-
+                  <CardContent>
+                  
+                    <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"> 
+                    <a href = {product?.product_link} target="_blank" rel="noopener noreferrer">
+                     Learn More
+                     </a>
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </Button>
+                    
+                  </CardContent>
                 </Card>
               ))}
             </div>
