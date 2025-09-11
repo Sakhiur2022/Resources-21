@@ -16,7 +16,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-              Professional Business Solutions for the <span className="text-primary">Modern World</span>
+              Professional Solutions for the <span className="text-primary">Modern Hospitals</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty">
               Resources 21 delivers exceptional products and services to businesses worldwide. Partner with us for
@@ -101,15 +101,15 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-4xl font-bold text-primary mb-2">100+</div>
               <div className="text-muted-foreground">Happy Clients</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-primary mb-2">50+</div>
-              <div className="text-muted-foreground">Countries Served</div>
+              <div className="text-muted-foreground">Districts Served</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">1000+</div>
+              <div className="text-4xl font-bold text-primary mb-2">500+</div>
               <div className="text-muted-foreground">Products Available</div>
             </div>
             <div>

@@ -82,7 +82,7 @@ export function Footer() {
                 <span className="text-muted-foreground">Product Distribution</span>
               </li>
               <li>
-                <span className="text-muted-foreground">Business Solutions</span>
+                
               </li>
               <li>
                 <span className="text-muted-foreground">Partnership Development</span>

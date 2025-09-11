@@ -39,7 +39,9 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
+            <Link href = "/company-profile">
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Contact Us</Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
