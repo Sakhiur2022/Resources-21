@@ -30,7 +30,7 @@ export function ProductCarousel() {
           .from("products")
           .select("id, name, image_url, brand, category")
           .not("image_url", "is", null)
-          .limit(6)
+          .limit(100)
 
         if (error) throw error
         setProducts(data || [])
