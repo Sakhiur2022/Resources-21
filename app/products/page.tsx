@@ -104,16 +104,18 @@ export default function ProductsPage() {
                       High-quality {product.category.toLowerCase()} from {product.brand}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                  
-                    <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"> 
-                    <a href = {product?.product_link} target="_blank" rel="noopener noreferrer">
-                     Learn More
-                     </a>
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </Button>
-                    
-                  </CardContent>
+               <CardContent>
+  <Button
+    asChild
+    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+  >
+    <a href={product?.product_link} target="_blank" rel="noopener noreferrer">
+      Learn More
+      <ExternalLink className="ml-2 h-4 w-4" />
+    </a>
+  </Button>
+</CardContent>
+
                 </Card>
               ))}
             </div>
