@@ -135,7 +135,7 @@ export function ProductCarousel() {
       </Button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+      {/*<div className="absolute bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
         {products.map((_, index) => (
           <button
             key={index}
@@ -145,7 +145,7 @@ export function ProductCarousel() {
             onClick={() => setCurrentIndex(index)}
           />
         ))}
-      </div>
+      </div>*/}
     </div>
   )
 }
