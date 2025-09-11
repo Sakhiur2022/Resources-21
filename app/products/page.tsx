@@ -5,9 +5,11 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { createClient } from "@/lib/supabase"
 import { useEffect, useState } from "react"
-import { ExternalLink, Package } from "lucide-react"
+import { ExternalLink, Package, Search } from "lucide-react"
 
 interface Product {
   id: string
@@ -22,6 +24,10 @@ interface Product {
 export default function ProductsPage() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
+  const [searchTerm, setSearchTerm] = useState("")
+  const [selectedBrand, setSelectedBrand] = useState("all")
+  const [selectedCategory, setSelectedCategory] = useState("all")
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
 
   useEffect(() => {
     async function fetchProducts() {
@@ -32,12 +38,40 @@ export default function ProductsPage() {
         console.error("Error fetching products:", error)
       } else {
         setProducts(data || [])
+        setFilteredProducts(data || [])
       }
       setLoading(false)
     }
 
     fetchProducts()
   }, [])
+
+  useEffect(() => {
+    let filtered = products
+
+    if (searchTerm) {
+      filtered = filtered.filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    }
+
+    if (selectedBrand !== "all") {
+      filtered = filtered.filter((product) => product.brand === selectedBrand)
+    }
+
+    if (selectedCategory !== "all") {
+      filtered = filtered.filter((product) => product.category === selectedCategory)
+    }
+
+    setFilteredProducts(filtered)
+  }, [products, searchTerm, selectedBrand, selectedCategory])
+
+  const uniqueBrands = [...new Set(products.map((product) => product.brand))].sort()
+  const uniqueCategories = [...new Set(products.map((product) => product.category))].sort()
+
+  const clearFilters = () => {
+    setSearchTerm("")
+    setSelectedBrand("all")
+    setSelectedCategory("all")
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -51,6 +85,68 @@ export default function ProductsPage() {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover our comprehensive range of high-quality products designed to meet your business needs.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Filters and Search Section */}
+      <section className="py-8 border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div className="flex flex-col sm:flex-row gap-4 flex-1">
+              {/* Search Input */}
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Search products by name..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+
+              {/* Brand Filter */}
+              <Select value={selectedBrand} onValueChange={setSelectedBrand}>
+                <SelectTrigger className="w-full sm:w-48">
+                  <SelectValue placeholder="Filter by brand" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Brands</SelectItem>
+                  {uniqueBrands.map((brand) => (
+                    <SelectItem key={brand} value={brand}>
+                      {brand}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {/* Category Filter */}
+              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                <SelectTrigger className="w-full sm:w-48">
+                  <SelectValue placeholder="Filter by category" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Categories</SelectItem>
+                  {uniqueCategories.map((category) => (
+                    <SelectItem key={category} value={category}>
+                      {category}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Clear Filters & Results Count */}
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-muted-foreground">
+                {filteredProducts.length} of {products.length} products
+              </span>
+              {(searchTerm || selectedBrand !== "all" || selectedCategory !== "all") && (
+                <Button variant="outline" onClick={clearFilters} size="sm">
+                  Clear Filters
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -73,9 +169,9 @@ export default function ProductsPage() {
                 </Card>
               ))}
             </div>
-          ) : products.length > 0 ? (
+          ) : filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {products.map((product) => (
+              {filteredProducts.map((product) => (
                 <Card key={product.id} className="bg-card border-border hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center mb-4">
@@ -104,26 +200,33 @@ export default function ProductsPage() {
                       High-quality {product.category.toLowerCase()} from {product.brand}
                     </CardDescription>
                   </CardHeader>
-               <CardContent>
- <a href={product?.product_link} target="_blank" rel="noopener noreferrer">
-  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground flex items-center justify-center gap-2">
-    Learn More
-    <ExternalLink className="h-4 w-4" />
-  </Button>
-</a>
-
-</CardContent>
-
+                  <CardContent>
+                    <a href={product?.product_link} target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground flex items-center justify-center gap-2">
+                        Learn More
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  </CardContent>
                 </Card>
               ))}
             </div>
           ) : (
             <div className="text-center py-16">
               <Package className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">No Products Available</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                {products.length === 0 ? "No Products Available" : "No Products Found"}
+              </h3>
               <p className="text-muted-foreground">
-                We're currently updating our product catalog. Please check back soon.
+                {products.length === 0
+                  ? "We're currently updating our product catalog. Please check back soon."
+                  : "Try adjusting your search or filter criteria to find what you're looking for."}
               </p>
+              {(searchTerm || selectedBrand !== "all" || selectedCategory !== "all") && (
+                <Button variant="outline" onClick={clearFilters} className="mt-4 bg-transparent">
+                  Clear All Filters
+                </Button>
+              )}
             </div>
           )}
         </div>
