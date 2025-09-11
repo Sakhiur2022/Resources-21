@@ -12,16 +12,15 @@ import { ExternalLink, Package } from "lucide-react"
 interface Product {
   id: string
   name: string
-  description: string
+  brand: string
   category: string
-  price: number
   image_url: string
+  product_link: string
+  created_at: string
 }
 
-
-
 export default function ProductsPage() {
-  const [products, setProducts] = useState<Product[]>([])  
+  const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -93,19 +92,24 @@ export default function ProductsPage() {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <CardTitle className="text-card-foreground mb-2">{product.name}</CardTitle>
-                        <Badge variant="secondary" className="mb-2">
-                          {product.category}
-                        </Badge>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-primary">${product.price.toFixed(2)}</div>
+                        <div className="flex gap-2 mb-2">
+                          <Badge variant="secondary">{product.category}</Badge>
+                          <Badge variant="outline" className="border-primary/20 text-primary">
+                            {product.brand}
+                          </Badge>
+                        </div>
                       </div>
                     </div>
-                    <CardDescription className="text-pretty">{product.description}</CardDescription>
+                    <CardDescription className="text-pretty">
+                      High-quality {product.category.toLowerCase()} from {product.brand}
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
+                  
                     <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                      Request Quote
+                    <a href = {product.product_link}>
+                     Learn More
+                     </a>
                       <ExternalLink className="ml-2 h-4 w-4" />
                     </Button>
                   </CardContent>
