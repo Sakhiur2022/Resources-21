@@ -124,3 +124,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fef2f2; /* Tailwind red-50 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ef4444; /* Tailwind red-500 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c; /* Tailwind red-700 */
+}
