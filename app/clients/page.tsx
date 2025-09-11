@@ -43,6 +43,7 @@ export default function ClientsPage() {
           )
         `)
         .order("name")
+        .limit(1000)
 
       if (customersError) {
         console.error("Error fetching customers:", customersError)
