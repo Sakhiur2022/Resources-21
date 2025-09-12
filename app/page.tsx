@@ -116,7 +116,7 @@ export default function HomePage() {
               <div className="text-muted-foreground">Districts Served</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-4xl font-bold text-primary mb-2">50+</div>
               <div className="text-muted-foreground">Products Available</div>
             </div>
             <div>
