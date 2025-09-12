@@ -7,7 +7,7 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Resources 21 - Professional Business Solutions",
+  title: "Resources 21 - Professional Medical Equipments Supplier",
   description: "Leading provider of quality products and services for medical equipments worldwide",
   icons: {
   icon: "https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/favicon.ico", 
