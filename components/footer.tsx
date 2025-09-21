@@ -12,7 +12,7 @@ export function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">
-                  <img src="https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/r21.png" />
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/r21-LVy2lfGAHanxftumXJo0NxsYjecSuE.png" />
                 </span>
               </div>
               <span className="text-xl font-bold text-muted-foreground">Resources 21</span>

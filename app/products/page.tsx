@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { createClient } from "@/lib/supabase"
 import { useEffect, useState } from "react"
 import { ExternalLink, Package, Search } from "lucide-react"
@@ -64,13 +63,21 @@ export default function ProductsPage() {
     setFilteredProducts(filtered)
   }, [products, searchTerm, selectedBrand, selectedCategory])
 
-  const uniqueBrands = [...new Set(products.map((product) => product.brand))].sort()
-  const uniqueCategories = [...new Set(products.map((product) => product.category))].sort()
+  const uniqueCategories = [...new Set(products.map((p) => p.category))].sort()
+
+  const getBrandsForCategory = (category: string) => {
+    return [...new Set(products.filter((p) => p.category === category).map((p) => p.brand))].sort()
+  }
 
   const clearFilters = () => {
     setSearchTerm("")
     setSelectedBrand("all")
     setSelectedCategory("all")
+  }
+
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category)
+    setSelectedBrand("all")
   }
 
   return (
@@ -79,74 +86,97 @@ export default function ProductsPage() {
 
       {/* Header */}
       <section className="bg-muted py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Products</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover our comprehensive range of high-quality products designed to meet your business needs.
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Products</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Discover our comprehensive range of high-quality products designed to meet your business needs.
+          </p>
         </div>
       </section>
 
-      {/* Filters and Search Section */}
+      {/* Filters */}
       <section className="py-8 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="flex flex-col sm:flex-row gap-4 flex-1">
-              {/* Search Input */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search products by name..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
-
-              {/* Brand Filter */}
-              <Select value={selectedBrand} onValueChange={setSelectedBrand}>
-                <SelectTrigger className="w-full sm:w-48">
-                  <SelectValue placeholder="Filter by brand" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Brands</SelectItem>
-                  {uniqueBrands.map((brand) => (
-                    <SelectItem key={brand} value={brand}>
-                      {brand}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              {/* Category Filter */}
-              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                <SelectTrigger className="w-full sm:w-48">
-                  <SelectValue placeholder="Filter by category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Categories</SelectItem>
-                  {uniqueCategories.map((category) => (
-                    <SelectItem key={category} value={category}>
-                      {category}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+          {/* Search Bar */}
+          <div className="mb-6">
+            <div className="relative max-w-md mx-auto">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search products by name..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
             </div>
+          </div>
 
-            {/* Clear Filters & Results Count */}
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-muted-foreground">
-                {filteredProducts.length} of {products.length} products
-              </span>
-              {(searchTerm || selectedBrand !== "all" || selectedCategory !== "all") && (
-                <Button variant="outline" onClick={clearFilters} size="sm">
-                  Clear Filters
+          {/* Category + Brand Selector */}
+          <div className="mb-6">
+            <div className="overflow-x-auto">
+              <div className="flex items-center gap-4 pb-4 min-w-max">
+                {/* All Categories */}
+                <Button
+                  variant={selectedCategory === "all" ? "default" : "outline"}
+                  onClick={() => handleCategoryClick("all")}
+                  className="whitespace-nowrap"
+                >
+                  All Categories
                 </Button>
-              )}
+
+                {/* Category Buttons */}
+                {uniqueCategories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    onClick={() => handleCategoryClick(category)}
+                    className="whitespace-nowrap"
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
             </div>
+          </div>
+
+          {selectedCategory !== "all" && (
+            <div className="mb-6">
+              <h3 className="text-sm font-medium text-muted-foreground mb-3">{selectedCategory} Brands:</h3>
+              <div className="overflow-x-auto">
+                <div className="flex items-center gap-3 pb-2 min-w-max">
+                  <Button
+                    variant={selectedBrand === "all" ? "default" : "outline"}
+                    onClick={() => setSelectedBrand("all")}
+                    size="sm"
+                    className="whitespace-nowrap"
+                  >
+                    All {selectedCategory} Brands
+                  </Button>
+                  {getBrandsForCategory(selectedCategory).map((brand) => (
+                    <Button
+                      key={brand}
+                      variant={selectedBrand === brand ? "default" : "outline"}
+                      onClick={() => setSelectedBrand(brand)}
+                      size="sm"
+                      className="whitespace-nowrap"
+                    >
+                      {brand}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Results Count + Clear Filters */}
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">
+              {filteredProducts.length} of {products.length} products
+            </span>
+            {(searchTerm || selectedBrand !== "all" || selectedCategory !== "all") && (
+              <Button variant="outline" onClick={clearFilters} size="sm">
+                Clear Filters
+              </Button>
+            )}
           </div>
         </div>
       </section>

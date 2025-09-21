@@ -141,3 +141,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #b91c1c; /* Tailwind red-700 */
 }
+
+/* Add scrollbar-hide utility for horizontal category scroller */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
