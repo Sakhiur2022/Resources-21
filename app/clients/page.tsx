@@ -79,8 +79,7 @@ export default function ClientsPage() {
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Customers</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We're proud to serve valued customers worldwide, providing quality products and services that meet their
-              unique needs.
+              We're proud to serve valued customers nationwide, providing quality products and services that meet their unique needs.
             </p>
           </div>
         </div>
