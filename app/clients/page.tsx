@@ -44,6 +44,8 @@ export default function ClientsPage() {
         `)
         .order("name")
         .limit(1000)
+      
+
 
       if (customersError) {
         console.error("Error fetching customers:", customersError)
@@ -55,7 +57,11 @@ export default function ClientsPage() {
             items: customer.customer_items?.map((ci: any) => ci.items).filter(Boolean) || [],
           })) || []
 
-        setCustomers(transformedData)
+          const sortedCustomers = transformedData.sort(
+    (a, b) => b.customer_items.length - a.customer_items.length
+  );
+
+        setCustomers(sortedCustomers)
       }
       setLoading(false)
     }
