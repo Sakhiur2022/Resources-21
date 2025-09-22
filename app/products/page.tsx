@@ -149,7 +149,7 @@ export default function ProductsPage() {
                     size="sm"
                     className="whitespace-nowrap"
                   >
-                    All {selectedCategory} Brands
+                    All Brands
                   </Button>
                   {getBrandsForCategory(selectedCategory).map((brand) => (
                     <Button
