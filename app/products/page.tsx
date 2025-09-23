@@ -209,7 +209,7 @@ export default function ProductsPage() {
                         <img
                           src={product.image_url || "/placeholder.svg"}
                           alt={product.name}
-                          className="w-full h-full object-cover rounded-lg"
+                          className="w-auto h-full object-cover rounded-lg"
                         />
                       ) : (
                         <Package className="h-16 w-16 text-muted-foreground" />
