@@ -1,2 +1,30 @@
-<h1>Website made with Nextjs and Supabase</h1>
-link: <a href="https://r21.com.bd">Click here</a>
+# Corporate website with React
+
+*Automatically synced with your [v0.app](https://v0.app) deployments*
+
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/sakhiur2020-2224s-projects/v0-corporate-website-with-react)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/maxpu6rPmyi)
+
+## Overview
+
+This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
+Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+
+## Deployment
+
+Your project is live at:
+
+**[https://vercel.com/sakhiur2020-2224s-projects/v0-corporate-website-with-react](https://vercel.com/sakhiur2020-2224s-projects/v0-corporate-website-with-react)**
+
+## Build your app
+
+Continue building your app on:
+
+**[https://v0.app/chat/projects/maxpu6rPmyi](https://v0.app/chat/projects/maxpu6rPmyi)**
+
+## How It Works
+
+1. Create and modify your project using [v0.app](https://v0.app)
+2. Deploy your chats from the v0 interface
+3. Changes are automatically pushed to this repository
+4. Vercel deploys the latest version from this repository

@@ -12,7 +12,7 @@ export function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/r21%281%29%281%29-pUYVvVoxEArGX1JC1HmEGf7oz1SmRa.png" />
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/r21%281%29%281%29%281%29-pqzhyiQnwIzcFircI4YXGtzUPXXX5F.png" />
                 </span>
               </div>
               <span className="text-xl font-bold text-muted-foreground">Resources 21</span>
@@ -41,7 +41,7 @@ export function Footer() {
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <MapPin className="h-4 w-4" />
                 <span className="text-xs text-justify">
-                  {"House No 51/5, Block-kha, Road No 12, Shekertak, Adabor, Dhaka-1207"}
+                  {"House No. 51/5, Road No. 12, Block: Kha, \nPC CULTURE HOUSING SOCIETY,  \nSHEKERTEK, MOHAMMADPUR, DHAKA-1207 \nBANGLADESH. "}
                 </span>
               </div>
             </div>
