@@ -128,6 +128,7 @@ export default function RootLayout({
   <meta name="twitter:title" content="Resources-21 | Leading Medical Equipment Supplier in Bangladesh" />
   <meta name="twitter:description" content="Bangladesh's premier medical equipment supplier providing hospital beds, cabinets, anesthesia machines, and comprehensive medical solutions." />
   <meta name="twitter:image" content="https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/og-image.png" />
+  <meta property="article:publisher" content="https://www.facebook.com/people/Resources-21-Limited/100048287333284/" />
       </head>
       <body>
         <Suspense fallback={null}>{children}</Suspense>
