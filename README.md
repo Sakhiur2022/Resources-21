@@ -1,6 +1,6 @@
 # Resources-21 | Leading Medical Equipment Supplier in Bangladesh
 
-[![Website](https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/og-image.png)](https://r21.com.bd)
+[![Website](https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/r21.png)](https://r21.com.bd)
 
 **Website:** [https://r21.com.bd](https://r21.com.bd)
 
@@ -42,7 +42,7 @@ The website is live at: [https://r21.com.bd](https://r21.com.bd)
 
 ## Contact
 - Facebook: [Resources-21 Limited](https://www.facebook.com/people/Resources-21-Limited/100048287333284/)
-- Email: info@r21.com.bd (or your business email)
+- Email: <a href="mailto:r21.bd@hotmail.com">r21.bd@hotmail.com</a>
 
 ---
 
