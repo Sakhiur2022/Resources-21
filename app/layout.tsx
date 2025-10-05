@@ -118,6 +118,7 @@ export default function RootLayout({
          <meta property="og:title" content="Resources-21 | Leading Medical Equipment Supplier in Bangladesh" />
   <meta property="og:description" content="Bangladesh's premier medical equipment supplier providing hospital beds, cabinets, anesthesia machines, and comprehensive medical solutions." />
   <meta property="og:image" content="https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/favicon.ico" />
+  <meta name="image" property="og:image" content="https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/favicon.ico">
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://r21.com.bd" />
@@ -128,7 +129,11 @@ export default function RootLayout({
   <meta name="twitter:title" content="Resources-21 | Leading Medical Equipment Supplier in Bangladesh" />
   <meta name="twitter:description" content="Bangladesh's premier medical equipment supplier providing hospital beds, cabinets, anesthesia machines, and comprehensive medical solutions." />
   <meta name="twitter:image" content="https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/og-image.png" />
+  <meta name="author" content="Sakhiur Rahman" />
+  <meta property="article:published_time" content="2025-10-06T00:00:00+06:00" />
   <meta property="article:publisher" content="https://www.facebook.com/people/Resources-21-Limited/100048287333284/" />
+
+
       </head>
       <body>
         <Suspense fallback={null}>{children}</Suspense>
