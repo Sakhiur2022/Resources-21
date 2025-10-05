@@ -118,7 +118,7 @@ export default function RootLayout({
          <meta property="og:title" content="Resources-21 | Leading Medical Equipment Supplier in Bangladesh" />
   <meta property="og:description" content="Bangladesh's premier medical equipment supplier providing hospital beds, cabinets, anesthesia machines, and comprehensive medical solutions." />
   <meta property="og:image" content="https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/favicon.ico" />
-  <meta name="image" property="og:image" content="https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/favicon.ico">
+  <meta name="image" property="og:image" content="https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/favicon.ico" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://r21.com.bd" />
