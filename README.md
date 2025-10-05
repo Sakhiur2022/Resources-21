@@ -1,30 +1,50 @@
-# Corporate website with React
+# Resources-21 | Leading Medical Equipment Supplier in Bangladesh
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+[![Website](https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/og-image.png)](https://r21.com.bd)
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/sakhiur2020-2224s-projects/v0-corporate-website-with-react)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/maxpu6rPmyi)
+**Website:** [https://r21.com.bd](https://r21.com.bd)
+
+---
 
 ## Overview
+Resources-21 is Bangladesh's premier medical equipment supplier, providing hospital beds, hospital cabinets, anesthesia machines, surgical equipment, and comprehensive medical solutions to hospitals nationwide. This website serves as the official online presence of Resources-21, showcasing products, company profile, clients, and principals.
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+---
+
+## Features
+- Product catalog with detailed descriptions
+- Client and principal pages
+- Company profile information
+- Contact & inquiry forms
+- SEO optimized with Open Graph, Twitter Cards, and structured data
+- Mobile-friendly and responsive design
+
+---
+
+## Technology Stack
+- **Frontend:** Next.js (React), Tailwind CSS
+- **Backend:** Node.js / API (if any)
+- **Hosting:** Vercel / Your hosting provider
+- **Database / Storage:** Supabase (for images and assets)
+- **Analytics:** Vercel Analytics
+
+---
 
 ## Deployment
+The website is live at: [https://r21.com.bd](https://r21.com.bd)
 
-Your project is live at:
+---
 
-**[https://vercel.com/sakhiur2020-2224s-projects/v0-corporate-website-with-react](https://vercel.com/sakhiur2020-2224s-projects/v0-corporate-website-with-react)**
+## Screenshots
+![Homepage](https://gurzkosujjgyjppjfwko.supabase.co/storage/v1/object/public/logo/og-image.png)
 
-## Build your app
+---
 
-Continue building your app on:
+## Contact
+- Facebook: [Resources-21 Limited](https://www.facebook.com/people/Resources-21-Limited/100048287333284/)
+- Email: info@r21.com.bd (or your business email)
 
-**[https://v0.app/chat/projects/maxpu6rPmyi](https://v0.app/chat/projects/maxpu6rPmyi)**
+---
 
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Notes
+This repository contains the source code and assets for the Resources-21 official website. Contributions are internal; external PRs are not accepted.
