@@ -25,6 +25,8 @@ export const metadata: Metadata = {
     "Resources-21",
     "R21 Bangladesh",
     "medical equipment Dhaka",
+    "hospital bed",
+    "hospital bed in Bangladesh"
   ],
   authors: [{ name: "Resources-21" }],
   creator: "Resources-21",
