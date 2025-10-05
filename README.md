@@ -23,9 +23,9 @@ Resources-21 is Bangladesh's premier medical equipment supplier, providing hospi
 
 ## Technology Stack
 - **Frontend:** Next.js (React), Tailwind CSS
-- **Backend:** Node.js / API (if any)
-- **Hosting:** Vercel / Your hosting provider
-- **Database / Storage:** Supabase (for images and assets)
+- **Backend:** Supabase and Next.js
+- **Hosting:** Vercel
+- **Database / Storage:** Supabase
 - **Analytics:** Vercel Analytics
 
 ---
