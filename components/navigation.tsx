@@ -23,7 +23,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/r21%281%29%281%29%281%29-pqzhyiQnwIzcFircI4YXGtzUPXXX5F.png"/></span>
+              <span className="text-primary-foreground font-bold text-lg"><img src="/images/design-mode/r21%281%29%281%29%281%29.png"/></span>
             </div>
             <span className="text-xl font-bold text-foreground">Resources-21</span>
           </Link>

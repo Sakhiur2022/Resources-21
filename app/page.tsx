@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ProductCarousel } from "@/components/product-carousel"
 import { ArrowRight, Users, UserCheck, PenTool as Tool } from "lucide-react"
-
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Home | Professional Medical Equipment Solutions for Modern Hospitals",
+  description:
+    "Resources-21 delivers exceptional medical equipment and services to hospitals across Bangladesh. Partner with us for innovative healthcare solutions including hospital beds, cabinets, anesthesia machines, and surgical equipment.",
+  openGraph: {
+    title: "Resources-21 | Professional Medical Equipment Solutions",
+    description:
+      "Leading medical equipment supplier in Bangladesh with 25+ years of experience serving 100+ hospitals.",
+  },
+}
 
 export default function HomePage() {
   return (

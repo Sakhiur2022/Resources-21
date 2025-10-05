@@ -82,14 +82,33 @@ export default function ProductsPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Medical Equipment Products",
+            description:
+              "Browse our comprehensive range of medical equipment including hospital beds, cabinets, anesthesia machines, and surgical equipment.",
+            url: "https://r21.com.bd/products",
+            provider: {
+              "@type": "MedicalBusiness",
+              name: "Resources-21",
+            },
+          }),
+        }}
+      />
+
       <Navigation />
 
       {/* Header */}
       <section className="bg-muted py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Products</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Medical Equipment Products</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover our comprehensive range of high-quality products designed to meet your business needs.
+            Discover our comprehensive range of high-quality medical equipment including hospital beds, hospital
+            cabinets, anesthesia machines, surgical equipment, and more designed to meet your healthcare facility needs.
           </p>
         </div>
       </section>
